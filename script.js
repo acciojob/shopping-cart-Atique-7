@@ -13,14 +13,17 @@ function addItem() {
   let sum = 0
 
   if (item !== "" && price !== "") {
+    // you can start items to the screen
     let row = document.createElement("tr")
     priceArr.push(parseInt(price))
+    // console.log(priceArr);
+    row.innerHTML = `<td>${item} </td> <td>${price}</td> `
 
-    row.innerHTML = `<td>${item}</td> <td>${price}</td>`
     for (let i = 0; i < priceArr.length; i++) {
       sum += priceArr[i]
     }
 
+    console.log(sum)
     table.append(row)
     total.innerText = sum
 
